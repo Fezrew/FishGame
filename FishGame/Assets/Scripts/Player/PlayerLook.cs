@@ -14,7 +14,7 @@ public class PlayerLook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //playerBody = GetComponentInParent();
+        playerBody = GetComponentInParent<CharacterController>().transform;
     }
 
     // Update is called once per frame

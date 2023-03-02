@@ -1,0 +1,9 @@
+Rod Types:
+Net - catches fish en mass once max proficiency
+
+Bait Types:
+Calming Bait - Automatic catch phase regardless of proficiency
+Enraging Bait - Threshold fight catch phase regardless of proficiency
+
+General:
+Fishing Proficiency - The more you catch a certain fish, the easier it is to catch it again. Eventually gives an automatic catch phase.

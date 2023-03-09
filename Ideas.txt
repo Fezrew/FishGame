@@ -7,3 +7,25 @@ Enraging Bait - Threshold fight catch phase regardless of proficiency
 
 General:
 Fishing Proficiency - The more you catch a certain fish, the easier it is to catch it again. Eventually gives an automatic catch phase.
+
+-----Phases-----
+General:
+- Ideally all phase scripts are attached to a single item preset so it's easy to place it in a scene and change the settings.
+(I don't know if this is possible with a static variable or if I should consider other methods)
+- All the scripts attached to the preset are regular classes that hold the settings for the phase Scripts, which are attached to the player.
+
+FishingManager:
+- Has functions to be called by any phase script that proceeds fishing to next phase.
+
+ApproachPhase:
+- We don't think about approach phase, not yet.
+
+BitePhase:
+- Bitephase could be a scriptable object that instantiates a new object onto a player (Maybe when they start fishing, maybe at start time).
+The reason for this is so the object has access to reference the player for playing sounds centred on them.
+At the very least, BitePhase will be attaching something to each player for the sake of gaining reference.
+
+CatchPhase:
+- Test the phase by creating an AutoCatch phase first.
+- Due to the existence of the player-specific progress bar, there will have to be an instance being created or attached to each player.
+(Maybe scriptable object or inherited script)

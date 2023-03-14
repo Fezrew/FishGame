@@ -9,6 +9,9 @@ namespace FezrewFishing
     /// </summary>
     public class FishingManager : MonoBehaviour
     {
+        /// <summary>
+        /// A reference to the instance with the correct settings
+        /// </summary>
         public static FishingManager instance;
 
         /// <summary>

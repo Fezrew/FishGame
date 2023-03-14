@@ -6,6 +6,9 @@ namespace FezrewFishing
 {
     public class Bite : MonoBehaviour
     {
+        /// <summary>
+        /// A reference to the instance with the correct settings
+        /// </summary>
         public static Bite instance;
 
         public void Start()
@@ -17,5 +20,7 @@ namespace FezrewFishing
             else if (instance != null && instance != this)
                 Destroy(this.gameObject);
         }
+
+
     }
 }

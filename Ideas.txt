@@ -1,5 +1,5 @@
 Rod Types:
-Net - catches fish en mass once max proficiency
+Net - catches fish en masse once max proficiency
 
 Bait Types:
 Calming Bait - Automatic catch phase regardless of proficiency

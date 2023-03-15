@@ -28,5 +28,25 @@ namespace FezrewFishing
             else if (instance != null && instance != this)
                 Destroy(this.gameObject);
         }
+
+        public void Update()
+        {
+            if(Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                StartFishing();
+            }
+        }
+
+        public void StartFishing()
+        {
+            if(HasApproach)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
     }
 }

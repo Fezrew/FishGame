@@ -16,6 +16,7 @@ General:
 
 FishingManager:
 - Has functions to be called by any phase script that proceeds fishing to next phase.
+- Create events that can be edited modularly in order to allow additions to the beginning and ending of every phase.
 
 ApproachPhase:
 - We don't think about approach phase, not yet.
@@ -29,3 +30,4 @@ CatchPhase:
 - Test the phase by creating an AutoCatch phase first.
 - Due to the existence of the player-specific progress bar, there will have to be an instance being created or attached to each player.
 (Maybe scriptable object or inherited script)
+- Make it possible for other users to easily add events once the fish is caught.

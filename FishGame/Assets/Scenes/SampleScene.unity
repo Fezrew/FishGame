@@ -587,6 +587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83924cd6089ecf549a9fd0401728c174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CatchType: 0
 --- !u!114 &706167404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -599,6 +600,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 971d3708c7f32e84c830dc72dce38c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxFishTime: 15
+  MinFishTime: 5
+  ReelWindow: 2
 --- !u!114 &706167405
 MonoBehaviour:
   m_ObjectHideFlags: 0

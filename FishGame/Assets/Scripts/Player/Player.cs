@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FezrewFishing;
 
 /// <summary>
 /// Contains all player input functions
@@ -33,22 +34,25 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isGrounded = Physics.CheckSphere(GroundCheck.position, GroundDistance, GroundMask);
+        if (!FishingManager.fishing)
+        {
+            isGrounded = Physics.CheckSphere(GroundCheck.position, GroundDistance, GroundMask);
 
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
 
-        Vector3 move = transform.right * x + transform.forward * z;
+            Vector3 move = transform.right * x + transform.forward * z;
 
-        controller.Move(move * MoveSpeed * Time.deltaTime);
+            controller.Move(move * MoveSpeed * Time.deltaTime);
 
-        velocity.y += gravity * Time.deltaTime;
+            velocity.y += gravity * Time.deltaTime;
 
-        if (isGrounded && velocity.y < 0)
-            velocity.y = -2f;
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
-            velocity.y = Mathf.Sqrt(JumpForce * -2f * gravity);
+            if (isGrounded && velocity.y < 0)
+                velocity.y = -2f;
+            if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+                velocity.y = Mathf.Sqrt(JumpForce * -2f * gravity);
 
-        controller.Move(velocity * Time.deltaTime);
+            controller.Move(velocity * Time.deltaTime);
+        }
     }
 }

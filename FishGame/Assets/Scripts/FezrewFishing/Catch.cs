@@ -69,11 +69,13 @@ namespace FezrewFishing
         void FailCatch()
         {
             Debug.Log("You dun didn't do it");
+            FishingManager.instance.FinishFishing();
         }
 
         void SucceedCatch()
         {
             Debug.Log("You dun did it");
+            FishingManager.instance.FinishFishing();
         }
     }
 }

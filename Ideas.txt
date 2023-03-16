@@ -31,3 +31,7 @@ CatchPhase:
 - Due to the existence of the player-specific progress bar, there will have to be an instance being created or attached to each player.
 (Maybe scriptable object or inherited script)
 - Make it possible for other users to easily add events once the fish is caught.
+
+---------------------------------------REMINDER-------------------------------------------------
+
+                                  COMMENT EVERYTHING

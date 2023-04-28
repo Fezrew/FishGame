@@ -93,6 +93,7 @@ namespace FezrewFishing
         public void ReelBegin()
         {
             Debug.Log("A fish took the bait!");
+            FishingManager.instance.BiteEvent.Invoke();
             isFishing = false;
             isReeling = true;
         }
@@ -100,6 +101,7 @@ namespace FezrewFishing
         public void ReelFailed()
         {
             Debug.Log("The fish got away...");
+            FishingManager.instance.EscapeEvent.Invoke();
             isReeling = false;
 
             //Let the manager know you can begin fishing again

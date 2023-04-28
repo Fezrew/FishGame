@@ -75,6 +75,7 @@ namespace FezrewFishing
         void SucceedCatch()
         {
             Debug.Log("You dun did it");
+            FishingManager.instance.FinishCatchEvent.Invoke();
             FishingManager.instance.FinishFishing();
         }
     }

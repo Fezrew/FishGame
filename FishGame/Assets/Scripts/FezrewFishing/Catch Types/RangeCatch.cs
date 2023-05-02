@@ -9,10 +9,10 @@ namespace FezrewFishing
         /// <summary>
         /// A reference to the instance with the correct settings
         /// </summary>
-        public static RangeCatch instance;
+        public static new RangeCatch instance;
 
         // Start is called before the first frame update
-        void Awake()
+        new void Awake()
         {
             //Make sure only one instance of this script exists
             //Particularly important as a version of this class gets created in the start of Catch

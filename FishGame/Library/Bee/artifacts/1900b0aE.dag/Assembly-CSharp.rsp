@@ -348,6 +348,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/FezrewFishing/Bite.cs"
+"Assets/Scripts/FezrewFishing/Catch Types/RangeCatch.cs"
 "Assets/Scripts/FezrewFishing/Catch.cs"
 "Assets/Scripts/FezrewFishing/FishingManager.cs"
 "Assets/Scripts/Player/Player.cs"

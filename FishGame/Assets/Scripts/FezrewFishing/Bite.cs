@@ -12,15 +12,15 @@ namespace FezrewFishing
         public static Bite instance;
 
         /// <summary>
-        /// The longest time it can take for a fish to bite
-        /// </summary>
-        [Tooltip("The longest time it can take for a fish to bite")]
-        public float MaxFishTime;
-        /// <summary>
         /// The shortest time it can take for a fish to bite
         /// </summary>
         [Tooltip("The shortest time it can take for a fish to bite")]
         public float MinFishTime;
+        /// <summary>
+        /// The longest time it can take for a fish to bite
+        /// </summary>
+        [Tooltip("The longest time it can take for a fish to bite")]
+        public float MaxFishTime;
         /// <summary>
         /// The randomised time that the fish will bite at.
         /// </summary>

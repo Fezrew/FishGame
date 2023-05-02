@@ -39,7 +39,7 @@ namespace FezrewFishing
         /// How close the player is to catching the fish
         /// This should only be changed in this script
         /// </summary>
-        private float catchProgress;
+        protected float catchProgress;
         /// <summary>
         /// Allows external scripts to read the catchProgress
         /// Mostly to allow UI displays of the current progress
@@ -54,6 +54,8 @@ namespace FezrewFishing
         public float ProgressRequired;
         #endregion
 
+        //TO DO: Make these variables only appear in editor if the catchType is RangeCatch
+        //These variables must be in this script, as the minigame's script is created on runtime and cannot be edited until then.
         #region Range Catching Variables
         /// <summary>
         /// The highest value the fishRange or catchRange can get before being stopped
@@ -75,11 +77,11 @@ namespace FezrewFishing
         /// <summary>
         /// the position of the centre of the player's catch range
         /// </summary>
-        float rangePosition;
+        protected float rangePosition;
         /// <summary>
         /// The position of the centre of the fish
         /// </summary>
-        float fishPosition;
+        protected float fishPosition;
 
         //Read-only variables for the position values
         public float FishPos => fishPosition;
@@ -93,14 +95,14 @@ namespace FezrewFishing
         /// <summary>
         /// Once this equals DecisionTime, the fish decides the next direction
         /// </summary>
-        float decisionTimer;
+        protected float decisionTimer;
         /// <summary>
         /// Is the fish swimming upwards?
         /// </summary>
-        bool swimUpwards;
+        protected bool swimUpwards;
         #endregion
 
-        public void Start()
+        public void Awake()
         {
             //Make sure only one instance of this script exists
             //We do this for the same reason as the FishingManager
@@ -110,24 +112,11 @@ namespace FezrewFishing
                 Destroy(this.gameObject);
         }
 
-        //TODO: Create derived catch classes for each Catch Type
-        public void Update()
+        private void Start()
         {
-            
-        }
-
-        /// <summary>
-        /// Catch phase begins when this function is called.
-        /// Determines how the phase plays based on the settings
-        /// </summary>
-        public void BeginCatch()
-        {
-            switch(CatchType)
+            //Attach a script at run time depending on what your fishing settings are
+            switch (CatchType)
             {
-                case catchType.AutoCatch:
-                    SucceedCatch();
-                    break;
-
                 case catchType.MashCatch:
                     break;
 
@@ -136,13 +125,30 @@ namespace FezrewFishing
             }
         }
 
-        void FailCatch()
+        //TO DO: Create derived catch classes for each Catch Type
+        public virtual void Update()
+        {
+
+        }
+
+        /// <summary>
+        /// Catch phase begins when this function is called.
+        /// Determines how the phase plays based on the settings
+        /// </summary>
+        public virtual void BeginCatch()
+        {
+            //If catchType is set to autocatch, this will call and be done automatically
+            //Because of this simplicity, autocatch doesn't need to be a derived class
+            SucceedCatch();
+        }
+
+        protected void FailCatch()
         {
             Debug.Log("You dun didn't do it");
             FishingManager.instance.FinishFishing();
         }
 
-        void SucceedCatch()
+        protected void SucceedCatch()
         {
             Debug.Log("You dun did it");
             FishingManager.instance.FinishCatchEvent.Invoke();

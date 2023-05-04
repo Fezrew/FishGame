@@ -28,7 +28,7 @@ namespace FezrewFishing
             if (FishingManager.instance.CurrentPhase == FishingManager.fishingPhase.Catch)
             {
                 //Move the catch range upwards if it hasn't hit the top
-                if (Input.GetKey(KeyCode.Space))
+                if (Input.GetKey(KeyCode.Mouse0))
                 {
                     if (rangePosition + (CatchRange / 2) < CatchBarMax)
                         rangePosition += (Time.deltaTime * RangeSpeed);

@@ -103,7 +103,7 @@ namespace FezrewFishing
         public void Update()
         {
             //Begins fishing when the player presses the space bar
-            if (Input.GetKeyDown(KeyCode.Space) && !fishing && !buffering)
+            if (Input.GetKeyDown(KeyCode.Mouse0) && !fishing && !buffering)
             {
                 StartFishing();
             }

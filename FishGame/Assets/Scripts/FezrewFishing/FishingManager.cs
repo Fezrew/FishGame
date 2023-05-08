@@ -62,7 +62,7 @@ namespace FezrewFishing
         /// <summary>
         /// Allows the user to add unique rods/baits/locations
         /// </summary>
-        public static bool HasApproach = false;
+        static bool HasApproach = false;
 
         /// <summary>
         /// Unlike the Bite script's isFishing, this boolean is just to avoid interactions between scripts while the player is fishing
@@ -98,6 +98,12 @@ namespace FezrewFishing
         public void Start()
         {
             currentPhase = fishingPhase.Approach;
+
+            //Check the approach settings
+            if (Approach.instance.UniqueFishingRods || Approach.instance.HasBait || Approach.instance.UniqueFishingHoles)
+                HasApproach = true;
+            else
+                HasApproach = false;
         }
 
         public void Update()
@@ -127,7 +133,7 @@ namespace FezrewFishing
             //Prevent anything other than fishing
             fishing = true;
 
-            if(HasApproach)
+            if (HasApproach)
             {
 
                 NextPhase();
@@ -144,7 +150,7 @@ namespace FezrewFishing
 
         public void NextPhase()
         {
-            switch(currentPhase)
+            switch (currentPhase)
             {
                 case fishingPhase.Approach:
                     currentPhase = fishingPhase.Bite;

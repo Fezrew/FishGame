@@ -60,9 +60,16 @@ namespace FezrewFishing
         #endregion
 
         /// <summary>
+        /// Determines whether to use 3D models or 2D sprites for the fish
+        /// </summary>
+        public bool is3D;
+
+        /// <summary>
         /// Allows the user to add unique rods/baits/locations
         /// </summary>
-        static bool HasApproach = false;
+        static bool hasApproach = false;
+
+        public bool HasApproach => hasApproach;
 
         /// <summary>
         /// Unlike the Bite script's isFishing, this boolean is just to avoid interactions between scripts while the player is fishing
@@ -88,7 +95,7 @@ namespace FezrewFishing
         private void Awake()
         {
             //Make sure only one instance of this script exists
-            //FishingManager holds some settings for the minigame's design and more than manager may mess with a user's fishing settings
+            //FishingManager holds some settings for the minigame's design and more than one manager may mess with a user's fishing settings
             if (instance == null)
                 instance = this;
             else if (instance != null && instance != this)
@@ -101,9 +108,9 @@ namespace FezrewFishing
 
             //Check the approach settings
             if (Approach.instance.UniqueFishingRods || Approach.instance.HasBait || Approach.instance.UniqueFishingHoles)
-                HasApproach = true;
+                hasApproach = true;
             else
-                HasApproach = false;
+                hasApproach = false;
         }
 
         public void Update()

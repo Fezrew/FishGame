@@ -6,16 +6,24 @@ namespace FezrewFishing
 {
     public class Fish : ScriptableObject
     {
-        // Start is called before the first frame update
-        void Start()
-        {
+        /// <summary>
+        /// The name of the fish
+        /// </summary>
+        [Tooltip("The name of the fish")]
+        public string Name;
 
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
+        //Range-Catching Variables
+        /// <summary>
+        /// How large the fish is on the range catching bar
+        /// The fish is easier to catch the higher this is
+        /// </summary>
+        [Tooltip("How large the fish is on the range catching bar")]
+        public float FishRange;
+        /// <summary>
+        /// How quickly the fish moves in the range catching bar
+        /// The fish is harder to catch the higher this is
+        /// </summary>
+        [Tooltip("How quickly the fish moves in the range catching bar")]
+        public float FishSpeed;
     }
 }

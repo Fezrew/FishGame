@@ -12,6 +12,18 @@ namespace FezrewFishing
         public static Approach instance;
 
         /// <summary>
+        /// Determines whether to use 3D models or 2D sprites for the fish
+        /// </summary>
+        [Tooltip("Determines whether to use 3D models or 2D sprites for the fish")]
+        public bool is3D;
+        /// <summary>
+        /// Can the fish be seen in the water?
+        /// </summary>
+        [Tooltip("Can the fish be seen in the water?")]
+        public bool FishVisible;
+
+        [Space]
+        /// <summary>
         /// Does the fishing minigame use fishing rods with differing values/models?
         /// </summary>
         [Tooltip("Does the fishing minigame use fishing rods with differing values/models?")]
@@ -24,11 +36,11 @@ namespace FezrewFishing
         /// <summary>
         /// Are there multiple places to fish that have different possible fish?
         /// </summary>
-        [Tooltip("Are there multiple places to fish that have different possible fish?")]
+        [Tooltip("Are there multiple places to fish that have different possible fish? (REMEMBER: Attach Fishmanager to each FishingHole object if you want this)")]
         public bool UniqueFishingHoles;
 
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             //Make sure only one instance of this script exists
             //We do this for the same reason as the FishingManager

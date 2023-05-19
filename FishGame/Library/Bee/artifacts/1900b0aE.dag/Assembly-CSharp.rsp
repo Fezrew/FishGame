@@ -356,6 +356,11 @@
 "Assets/Scripts/FezrewFishing/FishManager.cs"
 "Assets/Scripts/Player/Player.cs"
 "Assets/Scripts/Player/PlayerLook.cs"
+"Assets/Scripts/Unity-HideIf-Attribute-main/ChildExample.cs"
+"Assets/Scripts/Unity-HideIf-Attribute-main/Extensions/HideIfAttribute.cs"
+"Assets/Scripts/Unity-HideIf-Attribute-main/HideIfExample.cs"
+"Assets/Scripts/Unity-HideIf-Attribute-main/HideIfScriptable.cs"
+"Assets/Scripts/Unity-HideIf-Attribute-main/ParentExample.cs"
 -langversion:9.0
 
 /deterministic

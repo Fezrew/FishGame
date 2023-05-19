@@ -28,13 +28,20 @@ namespace FezrewFishing
             /// <summary>
             /// The player has to press a series of inputs in the correct order in order to catch the fish
             /// </summary>
-            QuicktimeCatch
+            QuicktimeCatch,
+            /// <summary>
+            /// The player has to keep the fish within a manipulatable range
+            /// </summary>
+            RangeCatch
         };
         /// <summary>
         /// This variable creates the drop-down selection in Unity for easy use in-editor
         /// </summary>
         [Tooltip("The minigame that begins once the player reaches catch phase")]
         public catchType CatchType;
+
+        [Space]
+
         /// <summary>
         /// How close the player is to catching the fish
         /// This should only be changed in this script
@@ -46,11 +53,13 @@ namespace FezrewFishing
         /// </summary>
         [Tooltip("How close the player is to catching the fish (Read-only)")]
         public float CatchProgress => catchProgress;
+
         /// <summary>
         /// The amount of progress the player must reach before the fish is caught
         /// FOR RANGE CATCHING THIS IS THE NUMBER OF SECONDS YOU NEED TO SPEND CATCHING IT
         /// </summary>
         [Tooltip("The amount of progress the player must reach before the fish is caught")]
+        [HideIfEnumValue("CatchType", HideIf.Equal, (int)catchType.AutoCatch)]
         public float ProgressRequired;
         #endregion
 
@@ -61,17 +70,20 @@ namespace FezrewFishing
         /// The highest value the fishRange or catchRange can get before being stopped
         /// </summary>
         [Tooltip("The highest value the fishRange or catchRange can get before being stopped")]
+        [HideIfEnumValue("CatchType", HideIf.NotEqual, (int) catchType.RangeCatch)]
         public float CatchBarMax;
 
         /// <summary>
         /// The value range of which you must keep the fishes value within in order to gain catch progress
         /// </summary>
         [Tooltip("The value range of which you must keep the fishes value within in order to gain catch progress")]
+        [HideIfEnumValue("CatchType", HideIf.NotEqual, (int)catchType.RangeCatch)]
         public float CatchRange;
         /// <summary>
         /// How fast the catch range moves in the catch bar
         /// </summary>
         [Tooltip("How fast the catch range moves in the catch bar")]
+        [HideIfEnumValue("CatchType", HideIf.NotEqual, (int)catchType.RangeCatch)]
         [Range(1, 10)]
         public float RangeSpeed;
         /// <summary>
@@ -91,6 +103,7 @@ namespace FezrewFishing
         /// The time before the fish decides their movement direction
         /// </summary>
         [Tooltip("The time before the fish decides their movement direction")]
+        [HideIfEnumValue("CatchType", HideIf.NotEqual, (int)catchType.RangeCatch)]
         public float DecisionTime = 1;
         /// <summary>
         /// Once this equals DecisionTime, the fish decides the next direction

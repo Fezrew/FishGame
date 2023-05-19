@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace FezrewFishing
 {
+    [CreateAssetMenu(fileName = "NewFish", menuName = "Fish", order = 1)]
     public class Fish : ScriptableObject
     {
         /// <summary>
@@ -25,5 +27,10 @@ namespace FezrewFishing
         /// </summary>
         [Tooltip("How quickly the fish moves in the range catching bar")]
         public float FishSpeed;
+
+        public void Start()
+        {
+
+        }
     }
 }

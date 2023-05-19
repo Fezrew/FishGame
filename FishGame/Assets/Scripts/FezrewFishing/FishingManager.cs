@@ -60,11 +60,6 @@ namespace FezrewFishing
         #endregion
 
         /// <summary>
-        /// Determines whether to use 3D models or 2D sprites for the fish
-        /// </summary>
-        public bool is3D;
-
-        /// <summary>
         /// Allows the user to add unique rods/baits/locations
         /// </summary>
         static bool hasApproach = false;

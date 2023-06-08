@@ -352,6 +352,7 @@
 "Assets/Scripts/FezrewFishing/Catch Types/RangeCatch.cs"
 "Assets/Scripts/FezrewFishing/Catch.cs"
 "Assets/Scripts/FezrewFishing/Fish.cs"
+"Assets/Scripts/FezrewFishing/FishingHole.cs"
 "Assets/Scripts/FezrewFishing/FishingManager.cs"
 "Assets/Scripts/FezrewFishing/FishManager.cs"
 "Assets/Scripts/Player/Player.cs"

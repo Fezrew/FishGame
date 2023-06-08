@@ -27,8 +27,10 @@ namespace FezrewFishing
                 else if (instance != null && instance != this)
                     Destroy(this.gameObject);
             }
-            else
+            else if (Approach.instance.UniqueFishingHoles && this.gameObject.name == "FishingManager")
+            {
                 this.enabled = false;
+            }
         }
 
         // Update is called once per frame

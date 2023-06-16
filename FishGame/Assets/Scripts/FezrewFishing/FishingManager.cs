@@ -132,6 +132,8 @@ namespace FezrewFishing
         /// </summary>
         public void StartFishing()
         {
+            //TODO grab a random fish to catch
+
             //Prevent anything other than fishing
             fishing = true;
 

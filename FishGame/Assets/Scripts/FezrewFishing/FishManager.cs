@@ -20,16 +20,23 @@ namespace FezrewFishing
         {
             if (!Approach.instance.UniqueFishingHoles)
             {
+                //Disable any fishingholes or non-manager gameobject instances of a fishmanager
+                if(gameObject.name != "FishingManager")
+                {
+                    enabled = false;
+                    return;
+                }
+
                 //Make sure only one instance of this script exists
                 //FishingManager holds some settings for the minigame's design and more than one manager may mess with a user's fishing settings
                 if (instance == null)
                     instance = this;
                 else if (instance != null && instance != this)
-                    Destroy(this.gameObject);
+                    Destroy(gameObject);
             }
-            else if (Approach.instance.UniqueFishingHoles && this.gameObject.name == "FishingManager")
+            else if (Approach.instance.UniqueFishingHoles && gameObject.name == "FishingManager")
             {
-                this.enabled = false;
+                enabled = false;
             }
         }
 
@@ -37,6 +44,11 @@ namespace FezrewFishing
         void Update()
         {
 
+        }
+
+        public Fish GetFish()
+        {
+            return AvailableFish[Random.Range(0, AvailableFish.Length)];
         }
     }
 }

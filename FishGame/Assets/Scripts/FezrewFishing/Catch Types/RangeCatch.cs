@@ -6,6 +6,8 @@ namespace FezrewFishing
 {
     public class RangeCatch : Catch
     {
+        //TODO Review the neccessity of this instancing when catching is set up better
+
         /// <summary>
         /// A reference to the instance with the correct settings
         /// </summary>

@@ -18,6 +18,7 @@ namespace FezrewFishing
         // Start is called before the first frame update
         void Start()
         {
+            //If every fishinghole has the exact same pool of fish
             if (!Approach.instance.UniqueFishingHoles)
             {
                 //Disable any fishingholes or non-manager gameobject instances of a fishmanager
@@ -28,12 +29,12 @@ namespace FezrewFishing
                 }
 
                 //Make sure only one instance of this script exists
-                //FishingManager holds some settings for the minigame's design and more than one manager may mess with a user's fishing settings
                 if (instance == null)
                     instance = this;
                 else if (instance != null && instance != this)
                     Destroy(gameObject);
             }
+
             else if (Approach.instance.UniqueFishingHoles && gameObject.name == "FishingManager")
             {
                 enabled = false;

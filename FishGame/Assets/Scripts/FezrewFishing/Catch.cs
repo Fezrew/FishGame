@@ -63,7 +63,6 @@ namespace FezrewFishing
         public float ProgressRequired;
         #endregion
 
-        //TO DO: Make these variables only appear in editor if the catchType is RangeCatch
         //These variables must be in this script, as the minigame's script is created on runtime and cannot be edited until then.
         #region Range Catching Variables
         /// <summary>

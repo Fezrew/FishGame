@@ -14,6 +14,10 @@ namespace FezrewFishing
         /// A reference to the instance with the correct settings
         /// </summary>
         public static FishingManager instance;
+        /// <summary>
+        /// The fish being caught
+        /// </summary>
+        Fish fish;
 
         #region Phases
         public enum fishingPhase
@@ -132,7 +136,16 @@ namespace FezrewFishing
         /// </summary>
         public void StartFishing()
         {
-            //TODO grab a random fish to catch
+            //Grab a random fish to catch
+            if(Approach.instance.UniqueFishingHoles)
+            {
+                //TODO Determine what fishinghole the player is fishing from and grab a fish from there
+            }
+            else
+            {
+                fish = FishManager.instance.GetFish();
+            }
+            
 
             //Prevent anything other than fishing
             fishing = true;
